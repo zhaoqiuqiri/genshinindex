@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>原神</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			.video-box {
+				position: relative;
+				height: 100vh;
+				background-color: #C1CFF7;
+				/*进行视频裁剪*/
+				overflow: hidden;
+				z-index: -9999;
+			}
+
+			.video-box .video-background {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				/*保证视频内容始终居中*/
+				transform: translate(-50%, -50%);
+				width: 100%;
+				height: 100%;
+				/*保证视频充满屏幕*/
+				object-fit: cover;
+				min-height: 800px;
+			}
+
+			.shiling {
+				width: 100vw;
+				display: flex;
+				position: absolute;
+				z-index: 99;
+				flex-direction: row;
+
+				/* justify-content: space-between; */
+			}
+
+			.shiling>img {}
+
+			.logo {
+				width: 50px;
+				/* margin-to0%; */
+				/* margin-top: 100px; */
+				margin: 100px;
+				position: absolute;
+			}
+
+
+			.dow {
+				width: 80%;
+				height: 40px;
+				/* background-color: red; */
+				margin-left: 10%;
+				position: absolute;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				/* margin-top: ; */
+				/* top: 0; */
+				bottom: 180px;
+			}
+
+			.help {
+				width: 80%;
+				height: 40px;
+				/* background-color: red; */
+				margin-left: 10%;
+				position: absolute;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				/* margin-top: ; */
+				/* top: 0; */
+				bottom: 130px;
+			}
+		</style>
+	<body>
+		<div id="app">
+
+			<div class="video-box">
+				<video class="video-background" preload="auto" loop playsinline autoplay src="./img/002.mp4"
+					tabindex="-1" muted="muted"></video>
+				<div class="shiling">
+					<img src="./img/下载.png" alt="" width="48px" style="margin: 6px;">
+					<img src="./img/b.png" alt=""
+						style="width: 22px; height: 24px;margin-left: 280px;margin-top: 12px;">
+				</div>
+				<div class="logo">
+					<img src="./img/38d3f3b.png" style="width: 200px;" alt="" srcset="">
+				</div>
+
+				<div class="txt">
+					<!-- 					<p style="font-size: 14px; text-indent: 2rem">
+						是原神的另一个版本，所有的玩法都是一模一样的，充值比例极其舒适，人人都是大佬，可以满命满精！数万玩家，有国内群体，采用的国内官服uid。支持iOS，平板，pc，安卓
+						每天送1600原石！<br />
+
+					</p>
+					<p style="font-size: 14px; text-indent: 2rem">
+						不过，您得下载另一个原神apk，pc版则需要添加补丁（该apk不会影响到您的官服apk和官服账号。）
+						<br /><span style="display: inline-block;text-indent: 2rem">5元您就可以享受到420抽。</span>
+						<br /><span style="display: inline-block;text-indent: 2rem">18元您就可以享受到420抽加四神二命一精</span>
+						<br /><span style="display: inline-block;text-indent: 2rem">98元您就可以有超高体验！</span>
+					</p>
+ -->
+				</div>
+
+				<div class="dow">
+					<div style="width: 40%;">
+						<img src="./img/a9661b3.png" style="width: 100%;">
+					</div>
+					<div style="width: 40%;">
+						<img src="./img/59a171d.png" style="width: 100%;">
+					</div>
+
+
+				</div>
+				<div class="help">
+					<div style="width: 40%;">
+						<img src="./img/a9661b3.png" style="width: 100%;">
+					</div>
+					<div style="width: 40%;">
+						<img src="./img/59a171d.png" style="width: 100%;">
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+
+	<script>
+		function browserRedirect() {
+			var hz = location.pathname;
+			var sUserAgent = navigator.userAgent.toLowerCase();
+			var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+			var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+			var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+			var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+			var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+			var bIsAndroid = sUserAgent.match(/android/i) == "android";
+			var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+			var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+			if (system.win || system.mac || system.xll) {
+				// window.location.href="http://m.reaer.com"+hz+"#www";
+				// window.location.href=""+"";
+				window.location.href =
+					"http://localhost:63342/genshin_web/%E5%AE%98%E6%96%B9/%E5%8E%9F%E7%A5%9E%E5%AE%98%E7%BD%91.html";
+			} else {}
+		}
+
+
+		// export default {
+		// 	methods: {
+		// 		open() {
+		// 			this.$message('这是一条消息提示');
+		// 		},
+
+		// 		openVn() {
+		// 			const h = this.$createElement;
+		// 			this.$message({
+		// 				message: h('p', null, [
+		// 					h('span', null, '内容可以是 '),
+		// 					h('i', {
+		// 						style: 'color: teal'
+		// 					}, 'VNode')
+		// 				])
+		// 			});
+		// 		}
+		// 	}
+		// }
+	</script>
+</html>
